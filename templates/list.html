@@ -1,10 +1,22 @@
 {% extends "master.html" %}
 {% block content %}
 <h1>{{ title }}</h1>
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 g-4">
 {% for truck in data.to_records() %}
-
-<li>{{ truck[1] }}</li>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ truck[1] }}</h5>
+          <p class="card-text">{{ truck[2] }}
+              {{ truck[3] }}
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
 {% endfor %}
-
+</div>
+</div>
 {{ data.to_records() }}
 {% endblock %}
