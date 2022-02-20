@@ -8,8 +8,8 @@
   - [ ] Filter by food truck foods
 - [ ] Combine food trucks of same brand and display list of locations
 
-- [ ] Results Display
+- [x] Results Display
   - [x] Applicant
   - [x] Address
   - [x] Food Items
-  - [ ] Use Latitude/Longitude to display a map
+  - [x] Use Latitude/Longitude to display a map
