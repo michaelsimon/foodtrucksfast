@@ -1,0 +1,10 @@
+{% extends "master.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+{% for truck in data.to_records() %}
+
+<li>{{ truck[1] }}</li>
+{% endfor %}
+
+{{ data.to_records() }}
+{% endblock %}
