@@ -28,5 +28,5 @@ def search():
     title = "Search"
     if request.method == "POST":
         search_term = request.form["search_term"]
-        results = all_results[all_results["Applicant"].str.contains(search_term)]
-        return render_template("search.html", title=title, data=results)
+        results = all_results[all_results["Applicant"].str.contains(search_term, case=False)]
+        return render_template("list.html", title=title, data=results)
