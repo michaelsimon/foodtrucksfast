@@ -5,11 +5,12 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
 {% for truck in data.to_records() %}
     <div class="col">
-      <div class="card">
+      <div class="card h-100">
         <div class="card-body">
           <h5 class="card-title">{{ truck[1] }}</h5>
           <p class="card-text">{{ truck[2] }}
-              {{ truck[3] }}
+              <br>
+              Food Items Include: {{truck[3][:50].replace(':', ', ').title()+'...'}}
           </p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
