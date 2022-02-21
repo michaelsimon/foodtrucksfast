@@ -18,7 +18,7 @@ A hosted version of this application is available at [https://foodtrucks.michael
 
 - Run `python3 -m pip install -r requirements.txt` to install the additional packages required (including flask, pandas, and gunicon).
 
-- Run `python3 wsgi.py` to start a local webserver and access the application at `http://127.0.0.1:5000`
+- Run `gunicorn app:app` to start a local webserver and access the application at `http://127.0.0.1:8000` (or port 8001)
 
 ## Usage
 
