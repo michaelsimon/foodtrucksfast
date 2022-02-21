@@ -2,16 +2,23 @@
 {% block content %}
 <div class="container">
 <div class="row row-cols-1 row-cols-md-3 g-4">
+  <!-- Iterate over truck records in data that are passed in -->
 {% for truck in data.to_records() %}
     <div class="col">
       <div class="card h-100">
         <div class="card-body">
+          <!-- Display Applicant Name -->
           <h5 class="card-title">{{ truck[1] }}</h5>
+          <!-- Display Applicant Address -->
           <p class="card-text">{{ truck[2] }}
               <br>
+              <!-- Display Applicant Food Items -->
               Food Items Include: {{truck[3][:50].replace(':', ', ').title()+'...'}}
           </p>
+          <!-- Enhancement: Include Google API to display Map -->
           <a href="https://maps.google.com/?q={{ truck[4] }},{{ truck[5] }}" class="btn btn-primary" target="_blank">Map it</a>
+
+          <!-- Enhancement: Lookup data in Yelp, Google, etc. for reviews, more data -->
         </div>
       </div>
     </div>
@@ -19,6 +26,7 @@
 </div>
 </div>
 {% if data.empty %}
+<!-- Return Empty message no results -->
 <div class="container">
     <div class="row">
         <div class="col">
@@ -26,5 +34,4 @@
         </div>
     </div>
 {% endif %}
-{{ data.to_records() }}
 {% endblock %}
